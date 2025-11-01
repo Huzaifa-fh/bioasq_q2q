@@ -1,0 +1,27 @@
+name: bioasq-rag
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  # Core numeric stack (conservative to avoid ABI issues)
+  - numpy=1.26.4
+  # PyTorch CPU build (change to CUDA build below if you have NVIDIA GPU)
+  - pytorch=2.3.1
+  - torchvision=0.18.1
+  - torchaudio=2.3.1
+  - cpuonly  # remove this line if you plan to use CUDA builds
+  # Python libs available on conda-forge
+  - sentence-transformers=3.1.1
+  - pydantic=2.11.1
+  - tqdm=4.66.5
+  - python-dotenv=1.0.1
+  - requests=2.32.3
+  - notebook=7.2.2
+  - pip
+  - pip:
+      # pip-only packages
+      - chromadb==0.5.23
+      - openai==1.52.2
+      - ollama==0.3.3
